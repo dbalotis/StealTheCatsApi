@@ -5,10 +5,11 @@ This is a REST API project that uses the [Cats as a Service (CaaS) API](https://
 ---
 
 ## Features
-- Fetch and store cat images and their data asynchronously.
+- Fetch and store cat images and their data asynchronously using a background job.
+- Retrieve the backgound job status.
 - Retrieve a cat by its ID.
 - Retrieve cats in a paginated response.
-- Filter cats by tag.
+- Filter cats by tag (temperament).
 - Swagger API documentation at `/swagger`.
 - Hangfire Dashboard at `/hangfire`
 ---
@@ -69,15 +70,15 @@ This is a REST API project that uses the [Cats as a Service (CaaS) API](https://
     - Swagger is used as an interactive documentation that allows you to send requests to the endpoints.
     - Hangfire dashboard is used to see and manage the various background jobs that are triggered and fetching cats.
     - On your browser navigate to swagger and to hangfire using the following links.
-    **https**
-    [https://localhost:7021/swagger](https://localhost:7021/swagger)
-    [https://localhost:7021/hangfire](https://localhost:7021/hangfire)
+    ### **https**
+    - [https://localhost:7021/swagger](https://localhost:7021/swagger)
+    - [https://localhost:7021/hangfire](https://localhost:7021/hangfire)
     
-    **http**
-    [http://localhost:5282/swagger](http://localhost:5282/swagger)
-    [http://localhost:5282/hangfire](http://localhost:5282/hangfire)
+    ### **http**
+    - [http://localhost:5282/swagger](http://localhost:5282/swagger)
+    - [http://localhost:5282/hangfire](http://localhost:5282/hangfire)
 
-2. **Use the Fetch endpoint at lease once**
+2. **Use the Fetch endpoint at least once**
     - This will start a background job that gets cats and stores them in our database.
     - The result will be a number which is the job Id. 
 
