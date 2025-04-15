@@ -30,7 +30,7 @@ namespace StealTheCatsApi.Services
                 .ToListAsync();
 
             //Filter out the existing ones
-            var newStolenCats = stolenCats.Where(x => !existingCatIds.Contains(x.Id));
+            var newStolenCats = stolenCats.Where(x => !existingCatIds.Contains(x.Id, StringComparer.OrdinalIgnoreCase));
 
             foreach (var cat in newStolenCats)
             {
@@ -63,7 +63,7 @@ namespace StealTheCatsApi.Services
 
             // Find which tags are missing
             var missingTagNames = tagNames
-                .Where(name => !existingTagNames.Contains(name))
+                .Where(name => !existingTagNames.Contains(name, StringComparer.OrdinalIgnoreCase))
                 .ToList();
 
             // Create new Tag entities

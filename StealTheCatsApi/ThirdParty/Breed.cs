@@ -12,7 +12,7 @@
                     ? Temperament
                         .Split(',')
                         .Select(x => x.Trim())
-                        .Distinct()
+                        .Distinct(StringComparer.OrdinalIgnoreCase)
                         .ToList()
                     : [];
             }
